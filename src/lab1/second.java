@@ -12,6 +12,7 @@ public class second {
 	public void create(String st,String cap) {
 		
 		m1.put(st, cap);
+		
 	}
 	public void dis() {
 		Iterator<String> it=m1.keySet().iterator();
@@ -70,13 +71,19 @@ public class second {
 	public void sub(String k1,String k2) {
 		System.out.println(m1.subMap(k1, k2));
 	}
+	public void pollFirst() {
+		m1.pollFirstEntry();
+	}
+	public void pollLast() {
+		m1.pollLastEntry();
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		second fi=new second();
 		Scanner sc=new Scanner(System.in);
 		
 		while(true) {
-			System.out.println("1- create \n 2-display \n 3-remove \n 4-update \n 5-descending \n 6-search \n7-size \n 8- clear \n 9-exit\n10-head \n 11-tail \n 12-sub\n");
+			System.out.println("1- create \n 2-display \n 3-remove \n 4-update \n 5-descending \n 6-search \n7-size \n 8- clear \n 9-exit\n10-head \n 11-tail \n 12-sub\n 13-pollFirst \n 14-poll LAst \n");
 			System.out.println("choose the choice");
 			int ch=sc.nextInt();
 			if(ch==1) {
@@ -135,6 +142,12 @@ public class second {
 				System.out.println("Enter state for ending");
 				String state1 = sc.next();
 				fi.sub(state,state1);
+			}
+			else if(ch==13) {
+				fi.pollFirst();
+			}
+			else if(ch==14) {
+				fi.pollLast();
 			}
 			else {
 				System.out.println("invalid option");
